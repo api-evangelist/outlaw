@@ -1,25 +1,61 @@
 aid: outlaw
+
 name: Outlaw
+
 description: 'Outlaw is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
   backed by bowery-capital) and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/outlaw/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+common:
+- type: Hosts
+  url: hosts/outlaw-hosts.yml
+- type: DomainSecurity
+  url: security/outlaw-domain-security.yml
+- type: Website
+  url: https://www.outlaw.com/
+
+apis: []
+
 x-backed-by:
 - bowery-capital
-common:
-- type: Website
-  url: http://www.getoutlaw.com/
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-24'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.outlaw.com/
+    status: null
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
